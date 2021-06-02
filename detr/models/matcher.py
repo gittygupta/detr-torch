@@ -2,7 +2,7 @@
 """
 Modules to compute the matching cost and solve the corresponding LSAP.
 """
-import torch
+import torch 
 from scipy.optimize import linear_sum_assignment
 from torch import nn
 

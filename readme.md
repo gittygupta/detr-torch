@@ -10,10 +10,10 @@ Object Detection using Transformers
 * Save the model to the folder `saved_models`
 * `python inference.py --model detr_{epoch_number}.pth --folder {path/to/images}`
 
-##  Working
+## Working: 
 [tbd]
 
-## Comparison
+## Comparison: 
 The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, EfficientDet-D1 has been used, which has 6.6M parameters. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 42M parameters. The results are as follows: 
 
 <p align="center">

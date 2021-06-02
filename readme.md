@@ -14,7 +14,7 @@ Object Detection using Transformers
 [tbd]
 
 ## Comparison
-The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, I have used EfficientDet-D1 having number of parameters = 6.6M. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 42M parameters. The results are as follows: 
+The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, EfficientDet-D1 has been used, which has 6.6M parameters. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 42M parameters. The results are as follows: 
 
 <p align="center">
     <img alt="Transformer" src="samples/22.jpg" width="45%">

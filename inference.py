@@ -5,6 +5,7 @@ from config import *
 import os
 import glob
 import torch
+import argparse
 import albumentations as A
 
 def scale_bbox(iw, ih, bbox):
@@ -52,12 +53,26 @@ def draw(image, y_pred, b_pred, confidence):
     return image
 
 
-if __name__ == '__main__': 
-    model_path = "saved_models/detr_4.pth"
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('-m', '--model', 
+                        help='Enter model name from saved_models',
+                        required=True)
+    
+    parser.add_argument('-f', '--folder', 
+                        help='Path to the folder having test images',
+                        required=True)
+
+    args = parser.parse_args()
+    model_name = args.model
+    test_images = args.folder
+
+    model_path = f"saved_models/{model_name}"
     model = DETR(num_classes=num_classes,num_queries=num_queries)
     model.load_state_dict(torch.load(model_path))   
 
-    test_path = 'test_images/*.jpg'
+    test_path = f'{test_images}/*'
     out_path = 'samples'
 
     if not os.path.exists(out_path):
@@ -74,3 +89,4 @@ if __name__ == '__main__':
         b_pred = scale_bbox(w, h, b_pred)
         out_image = draw(orig_image, y_pred, b_pred, confidence)
         cv2.imwrite(f'samples/{i}.jpg', out_image)        
+    

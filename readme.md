@@ -28,7 +28,7 @@ Also, tested on a NVIDIA GTX 1650 Max-Q (4GB) GPU, the EfficientDet-D1 Model run
 
 **Thus, the transformer architecture is able to provide a boost in speed and also a stability in the confidence of prediction**.
 
-### Few Examples:
+### More Comparisons:
 <p align="center">
     <img alt="Transformer" src="samples/12.jpg" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;

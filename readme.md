@@ -10,6 +10,25 @@ Object Detection using Transformers
 * Save the model to the folder `saved_models`
 * `python inference.py --model detr_{epoch_number}.pth --folder {path/to/images}`
 
+#### Single instance usage:
+```python
+from config import *
+from inference import *
+from model import DETR
+
+model_path = 'path/to/model.pth'
+model = DETR(num_classes=num_classes,num_queries=num_queries)
+model.load_state_dict(torch.load(model_path)) 
+
+image = cv2.imread('path/to/image.jpg')
+transformed_image = transform(image)
+confidences, bboxes = run_inference_for_single_image(image, model, torch.device('cuda'))
+bboxes = scale_bbox(image.shape[1], image.shape[0], bboxes)
+
+output_image = draw(image, confidences, bboxes, 0.5)
+cv2.imwrite('path/to/save/image.jpg', output_image)
+```
+
 ## Comparison: 
 The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, EfficientDet-D1 has been used, which has 6.6M parameters. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 42M parameters. The results are as follows: 
 

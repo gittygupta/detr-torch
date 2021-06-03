@@ -1,12 +1,12 @@
-from data_utils import *
 from model import DETR
 from config import *
 
 import os
+import cv2
 import glob
 import torch
 import argparse
-import albumentations as A
+import numpy as np
 
 def scale_bbox(iw, ih, bbox):
     y1, x1, h, w = np.hsplit(bbox, 4)

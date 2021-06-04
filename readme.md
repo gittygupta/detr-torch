@@ -30,7 +30,7 @@ cv2.imwrite('path/to/save/image.jpg', output_image)
 ```
 
 ## Comparison: 
-The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, EfficientDet-D1 has been used, which has 6.6M parameters. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 42M parameters. The results are as follows: 
+The current SOTA object detection is done by Google's [EfficientDet](https://github.com/xuannianz/EfficientDet). Due to hardware constraints, EfficientDet-D1 has been used, which has 6.6M parameters. The Transformer (odd 17M parameters) on the other hand uses ResNet50 as the backbone (odd 23M parameters) with a total of 41M parameters. The results are as follows: 
 
 <p align="center">
     <img alt="Transformer" src="samples/22.jpg" width="45%">
